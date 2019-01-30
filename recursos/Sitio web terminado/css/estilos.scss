@@ -1,0 +1,546 @@
+//---------------------------------
+// 1.  PATRONES DE COLORES
+//---------------------------------
+$principal: #34ab77;
+$secundario: #35363c;
+$texto: #696969;
+/*-----------------------------------------
+2. TIPOGRAFIA DEL SITIO
+-------------------------------------------*/
+
+html {
+   font-size: 13px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: $texto;
+}
+
+/*------------------------------------------
+3. ESTILOS GENERALES DE BOTONES
+-------------------------------------------*/
+
+.btn {
+    border-radius: 3rem;
+    padding: 0.7rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease !important;
+    font-weight: 900
+}
+
+/*-------------------------------------------
+4. PERSONALIZANDO EL COLOR PRINCIPAL
+---------------------------------------------*/
+
+.bg-primary {
+    background-color: $principal !important;
+}
+
+.text-primary {
+    color: $principal !important;
+}
+
+/* Boton principal ".btn-primary" */
+
+.btn-primary {
+    background-color: $principal !important;
+    border-color: darken($principal, 10%) !important;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #fff !important;
+    color: $secundario !important;
+}
+
+.btn-primary:active {
+    background-color: transparent !important;
+    border-color: darken($principal, 30%) !important;
+    color: $secundario !important;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba($principal, .5) !important;
+}
+
+.btn-primary:before {
+    content: "";
+    transform: skew(45deg, 0);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover:before,
+.btn-primary:focus:before,
+.btn-primary:active:before {
+    width: 120%;
+    left: -10%;
+}
+
+.btn-primary:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f138";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    left: 10px;
+    transition: left .3s ease;
+}
+
+.btn-primary:hover:after,
+.btn-primary:focus:after,
+.btn-primary:active:after {
+    left: 6px;
+}
+
+/*-------------------------------------------
+5. PERSONALIZANDO EL COLOR SECUNDARIO
+---------------------------------------------*/
+
+.bg-secondary {
+    background-color: $secundario !important;
+}
+
+.text-secondary {
+    color: $secundario !important;
+}
+
+/*-----------------------------------------
+6. Sección ".redes-sociales"
+------------------------------------------*/
+
+.redes-sociales a {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0.3rem 1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+}
+
+.redes-sociales li:hover a {
+    transform: scale(1.3) rotate(360deg);
+    opacity: 1;
+}
+
+/*-----------------------------------------
+7. Sección BARRA DE NAVEGACIÓN ".navbar"
+------------------------------------------*/
+
+/*Clases de encabezado fijo*/
+
+.cabecera-fija {
+    transition: all .5s ease;
+    width: 100% !important;
+    /*Corrigue error de ancho cuando se rediemsiona el navegador*/
+    background: darken($secundario, 20%) !important;
+}
+
+/*Logo*/
+
+.navbar-dark .navbar-toggler {
+    color: rgb(255, 255, 255);
+    border-color: transparent;
+    font-size: 2rem;
+    outline: 0;
+}
+
+.navbar-toggler .boton-menu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c9";
+}
+
+.navbar-toggler .boton-menu.boton-abierto:before {
+    content: "\f00d";
+    margin-left: 3px;
+}
+
+/*Enlaces del menú*/
+
+.navbar-nav .nav-link {
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background: $secundario;
+}
+
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active {
+    background: $principal;
+}
+
+.navbar-nav .nav-link:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover:after {
+    transform: rotateZ(180deg);
+}
+
+/*----------------------------------------
+8. SECCIÓN "#animacion"
+-----------------------------------------*/
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+}
+
+/*Oscurecer las imágenes*/
+
+.swiper-slide:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 3rem;
+    height: 3rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all .5s ease;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    content: "\f060";
+}
+
+/*Boton Siguiente*/
+
+.swiper-button-next {
+    transform: rotate(180deg);
+}
+
+/*Estado Hover*/
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $principal;
+}
+
+/*Paginador*/
+
+.swiper-pagination-bullet {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 1rem;
+}
+
+.swiper-pagination-bullet-active {
+    background: $principal;
+}
+
+/*--------------------------------------------
+8. Sección "#bienvenidos"
+---------------------------------------------*/
+
+.contenedor-video a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*Recientemente descubrimos que podríamos usar  transform: translateY(-50%); en CSS3 para alinear verticalmente,
+ y que todo el problema del "centrado" 
+se podría abordar de manera simple  transform: translate(-50%,-50%);, ¡así que pensamos que compartiríamos el 
+truco!*/
+    transform: translate(-50%, -50%);
+    width: 7rem;
+    height: 7rem;
+    color: $principal;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    border: 0px solid transparent;
+    background-clip: content-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+    transition: all .5s ease;
+}
+
+.contenedor-video img {
+    transition: 1.5s;
+}
+
+.contenedor-video:hover img {
+    transform: scale3d(1.1, 1.1, 1);
+}
+
+.contenedor-video a:hover {
+    background-color: $principal;
+    color: white;
+    border: 10px solid rgba(255, 255, 255, 0.47);
+}
+
+/*---------------------------------------------
+9. Sección "#te-ayudamos"
+----------------------------------------------*/
+
+#te-ayudamos {
+    background-image: url('../images/fondo-te-ayudamos.jpg');
+    transform: skew(0, 6deg);
+}
+
+#te-ayudamos .container {
+    transform: skew(0, -6deg);
+}
+
+#te-ayudamos:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.50);
+}
+
+/*---------------------------------------------
+10. Sección "#premios"
+----------------------------------------------*/
+
+#premios .contador-linea {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 53px;
+    height: 5px;
+    font-size: 0;
+    line-height: 0;
+    background: $principal;
+    transform: translateX(-50%);
+    transition: all .4s ease;
+}
+
+#premios .col-6:hover .contador-linea {
+    bottom: 10px;
+    transform: translateX(-50%) rotate(180deg);
+    background: $secundario;
+}
+
+/*---------------------------------------------
+11. Sección "#nuestra-app"
+----------------------------------------------*/
+
+#nuestra-app {
+    background-image: url('../images/fondo-descargar-app.jpg');
+    overflow: hidden;
+}
+
+#nuestra-app:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+/*---------------------------------------------
+12. Sección "#contacto"
+----------------------------------------------*/
+
+#contacto .detalle-triangulo {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: $principal;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(50%) rotate(45deg);
+}
+
+.input-group .cursor {
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/*Personalizando el selector de fecha*/
+
+/*Agrega border al selector*/
+
+.picker__box {
+    border: 10px solid $principal !important;
+}
+
+/*Define un color al dia actual*/
+
+.picker__day--highlighted:hover,
+.picker--focused .picker__day--highlighted {
+    background: $principal;
+    color: #fff;
+}
+
+/*Personalizando el PickerTime*/
+
+/*Define un color a la hora actual*/
+
+.picker__list-item--highlighted:hover,
+.picker--focused .picker__list-item--highlighted {
+    color: #ffffff;
+    background: $principal;
+    border-color: transparent;
+}
+
+/*Corrige el espaciado inferior en el selector*/
+
+.picker__list {
+    padding: 0.5em 0;
+}
+
+/*Personaliza el boton limpiar*/
+
+.picker--time .picker__button--clear {
+    padding: 1em;
+    background: #ff491e;
+    color: #fff;
+    border-radius: 6px;
+}
+
+/*---------------------------------------------
+13. Sección "#pie-de-pagina"
+----------------------------------------------*/
+
+.columna-inclinada:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -300%;
+    left: -300%;
+    background: $principal;
+}
+
+.enlaces-secundarios {
+    border-bottom: 1px solid #687079;
+    box-shadow: 0 1px #1a1e21;
+}
+
+.enlaces-secundarios .nav-link {
+    color: white;
+    display: block;
+    padding: 1rem 1rem;
+}
+
+/*--------------------------------------------
+14. Corrigiendo estilos para Internet Explorer 
+ --------------------------------------------*/
+
+/*Corrigue el comportamiento del la flecha en mobiles*/
+
+html[class^="ie"] .navbar-nav .nav-link:after {
+    display: block;
+}
+
+/*Corrigue  centra de forma horizontal el contenido de cada Slide*/
+
+html[class^="ie"] .swiper-slide {
+    flex-direction: column;
+}
+
+/*--------------------------------------------
+15. EMPIEZAN LAS MEDIAS QUERIES
+----------------------------------------------*/
+
+@media (min-width: 768px) {
+    /*---------------------------
+    Sección menu principal
+    -----------------------------*/
+    /*Estado por defecto de Enlaces*/
+    .navbar-dark .navbar-nav .nav-link {
+        padding: .7rem 1.5rem;
+        margin: 0 .2rem;
+        border-radius: 1.5rem;
+    }
+    /*Quitamos las flechas de los enlaces*/
+    .navbar-nav .nav-link:after {
+        content: "";
+    }
+    /*Estilo estado "Hover" de enlaces */
+    .navbar-dark .navbar-nav .nav-link:focus,
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: rgba(255, 255, 255, .75);
+    }
+    /*---------------------------
+    Sección "#pie-de-pagina"
+    -----------------------------*/
+    .columna-inclinada:before {
+        left: -1000px;
+        right: 0;
+        transform: skewX(20deg);
+        transform-origin: right bottom;
+    }
+    /*--------------------------------
+    Sección "#te-ayudamos"
+    ------------------------------*/
+    #te-ayudamos {
+        transform: skew(0, 2deg);
+    }
+    #te-ayudamos .container {
+        transform: skew(0, -2deg);
+    }
+}
+
+@media (min-width: 990px) {
+    /*--------------------------------
+   Tipografia del sitio
+    ------------------------------*/
+    html {
+        font-size: 16px;
+    }
+    .swiper-slide {
+        height: 550px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .swiper-slide {
+        height: 650px;
+    }
+}
